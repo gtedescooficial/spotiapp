@@ -13,6 +13,11 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import {Routes } from '@angular/router';
 
 import { ROUTES } from './app.routes';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { ErrorComponent } from './components/shared/error/error.component';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { ROUTES } from './app.routes';
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    ArtistaComponent
+    ArtistaComponent,
+    NoimagePipe,
+    DomseguroPipe,
+    TarjetaComponent,
+    LoadingComponent,
+    ErrorComponent
 
   ],
   imports: [

@@ -1,1 +1,44 @@
-<p>artista works!</p>
+
+<div class="row">
+  <div class="col-2">
+<a [href]="artista.external_urls.spotify ">   <img [src]="artista.images | noimage" alt="" class="img-thumbnail img-responsive img-circle shadow-lg"></a>
+  </div>
+  <div class="col">
+   <h2 class="text-left">{{ artista.name }} </h2>
+    <hr>
+    <a class="text-success" [href]="artista.external_urls.spotify ">Visitar pagina do artista em Spotify</a>
+
+  <div class="row mt-4">
+    <div class="col">
+      <table class="table">
+        <thead class="">
+          <tr>
+          <th>Foto</th>
+          <th>Album</th>
+          <th>Musica</th>
+          <th>Vista Previa</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track of tracks">
+            <td><img class="img img-thumbnail img-circle" [src]="track.album.images | noimage" [alt]="track.album.name"></td>
+          <td>{{ track.album.name }}</td>
+          <td>{{ track.name }}</td>
+          <td *ngIf="track.preview_url">
+            <iframe [src]="track.uri | domseguro : 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+
+            <td *ngIf="!track.preview_url" class="text-center"><span class="text-muted ">Sem vista previa da musica</span> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!--   <div class="col-2 text-right">
+<a class="btn btn-outline-danger" [routerLink]="[ '/search' ]">Voltar</a >
+  </div> -->
+</div>
+
+
+<!-- {{ artista.images[0] | noimage }} -->
+
